@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivanshu Pandey | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        .profile-pic-container {
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(45deg, #38bdf8, #818cf8);
+            animation: rotate-gradient 5s linear infinite;
+        }
+        .profile-pic {
+            transition: all 0.3s ease;
+        }
+        .profile-pic-container:hover .profile-pic {
+            transform: scale(1.05);
+        }
+        .card-hover {
+            transition: all 0.3s ease-in-out;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: #38bdf8;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #38bdf8;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #38bdf8, #a78bfa, #f472b6);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradient-animation 4s ease infinite;
+        }
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes rotate-gradient {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+        .modal-content {
+            transition: transform 0.25s ease;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+        <div class="absolute inset-0 bg-slate-900"></div>
+        <div class="absolute bottom-0 left-[-20%] right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(56,189,248,0.08),rgba(255,255,255,0))]"></div>
+        <div class="absolute bottom-[-20%] right-[20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(167,139,250,0.08),rgba(255,255,255,0))]"></div>
+    </div>
+
+    <nav class="fixed w-full bg-slate-900/80 backdrop-blur-md z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-xl font-bold gradient-text">Shivanshu Pandey</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="#about" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">About</a>
+                        <a href="#skills" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Skills</a>
+                        <a href="#projects" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Projects</a>
+                        <a href="#achievements" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Achievements</a>
+                        <a href="#contact" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block nav-link text-gray-300 hover:text-white px-3 py-2">Home</a>
+                <a href="#about" class="block nav-link text-gray-300 hover:text-white px-3 py-2">About</a>
+                <a href="#skills" class="block nav-link text-gray-300 hover:text-white px-3 py-2">Skills</a>
+                <a href="#projects" class="block nav-link text-gray-300 hover:text-white px-3 py-2">Projects</a>
+                <a href="#achievements" class="block nav-link text-gray-300 hover:text-white px-3 py-2">Achievements</a>
+                <a href="#contact" class="block nav-link text-gray-300 hover:text-white px-3 py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="animate__animated animate__fadeInLeft">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span class="gradient-text">Shivanshu Pandey</span></h1>
+                <h2 class="text-2xl md:text-3xl text-sky-300 mb-6 font-medium">Computer Science Student & Developer</h2>
+                <p class="text-lg text-gray-300 mb-8 leading-relaxed">Passionate about building innovative solutions using cutting-edge technologies. Currently pursuing B.Tech at IIIT Bhagalpur with a strong focus on machine learning and data analysis.</p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="px-6 py-3 bg-sky-600 hover:bg-sky-700 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg shadow-sky-900/50">Contact Me</a>
+                    <a href="#projects" class="px-6 py-3 border-2 border-sky-600 text-sky-300 hover:bg-sky-600 hover:text-white rounded-lg font-semibold transition-all transform hover:scale-105">View Projects</a>
+                </div>
+            </div>
+            <div class="flex justify-center animate__animated animate__fadeInRight">
+                <div class="profile-pic-container w-64 h-64 md:w-80 md:h-80 shadow-2xl shadow-indigo-900/50">
+                    <img src="img.png" alt="Shivanshu Pandey" class="profile-pic w-full h-full object-cover rounded-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-800/30 rounded-3xl my-12 backdrop-blur-sm border border-slate-700/50">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">About Me</h2>
+            <div class="w-24 h-1 bg-sky-500 mx-auto rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+             <div class="order-1 md:order-2 bg-slate-900/50 p-8 rounded-2xl border border-slate-700 card-hover">
+                <h3 class="text-2xl font-semibold mb-6 text-center text-sky-300">Quick Facts</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <span class="text-sky-400 mr-3 mt-1">✨</span>
+                        <p class="text-gray-300">Top 3% Coder at Coding Ninjas & solved 150+ LeetCode problems.</p>
+                    </li>
+                    <li class="flex items-start">
+                       <span class="text-sky-400 mr-3 mt-1">✨</span>
+                        <p class="text-gray-300">500+ problems solved on competitive platforms like CodeChef/Codeforces.</p>
+                    </li>
+                    <li class="flex items-start">
+                       <span class="text-sky-400 mr-3 mt-1">✨</span>
+                        <p class="text-gray-300">Certified in Machine Learning, SQL, Python, and advanced Excel.</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-400 mr-3 mt-1">✨</span>
+                        <p class="text-gray-300">Passionate about data analysis and building practical applications.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="order-2 md:order-1">
+                <h3 class="text-2xl font-semibold mb-4 text-sky-300">Education</h3>
+                <div class="bg-slate-800/50 p-6 rounded-xl border-l-4 border-sky-500 mb-6 card-hover">
+                    <h4 class="text-xl font-medium mb-1">Indian Institute of Information Technology, Bhagalpur</h4>
+                    <p class="text-gray-300 mb-1">B.Tech in Computer Science and Engineering</p>
+                    <p class="text-gray-400 text-sm">Aug 2023 – May 2027</p>
+                    <p class="text-sky-300 mt-2 font-semibold">CGPA: 8.09/10 (Top 3% of Batch)</p>
+                </div>
+                
+                <h3 class="text-2xl font-semibold mb-4 text-sky-300 mt-8">Position of Responsibility</h3>
+                <div class="bg-slate-800/50 p-6 rounded-xl border-l-4 border-sky-500 card-hover">
+                    <h4 class="text-xl font-medium mb-1">Event Organizer, IIIT Bhagalpur</h4>
+                    <p class="text-gray-300">Led and managed campus events for 500+ participants including the Fresher's Party and CCC Cricket Tournament.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Technical Skills</h2>
+            <div class="w-24 h-1 bg-sky-500 mx-auto rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="card-hover bg-slate-800 p-6 rounded-xl border border-slate-700 text-center">
+                <div class="text-sky-400 mx-auto mb-4 h-12 w-12 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Languages</h3>
+                <p class="text-gray-400 text-sm">C, C++, Python, SQL</p>
+            </div>
+            <div class="card-hover bg-slate-800 p-6 rounded-xl border border-slate-700 text-center">
+                <div class="text-sky-400 mx-auto mb-4 h-12 w-12 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Data Tools</h3>
+                <p class="text-gray-400 text-sm">MS Excel, Power BI, Azure, ETL, Pandas, NumPy</p>
+            </div>
+            <div class="card-hover bg-slate-800 p-6 rounded-xl border border-slate-700 text-center">
+                <div class="text-sky-400 mx-auto mb-4 h-12 w-12 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Concepts</h3>
+                <p class="text-gray-400 text-sm">Machine Learning, Databases, DSA</p>
+            </div>
+            <div class="card-hover bg-slate-800 p-6 rounded-xl border border-slate-700 text-center">
+                <div class="text-sky-400 mx-auto mb-4 h-12 w-12 flex items-center justify-center">
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Web & Other</h3>
+                <p class="text-gray-400 text-sm">HTML, CSS, JS, ReactJS</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-800/30 rounded-3xl my-12 backdrop-blur-sm border border-slate-700/50">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Featured Projects</h2>
+            <div class="w-24 h-1 bg-sky-500 mx-auto rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="card-hover bg-slate-800 p-6 rounded-xl border border-slate-700 flex flex-col">
+                <h3 class="text-xl font-semibold text-sky-300 mb-2">Crime Mapping and Analysis</h3>
+                <p class="text-gray-400 mb-4 text-sm">Python, Folium, Data Analytics</p>
+                <p class="text-gray-300 mb-6 flex-grow">Developed interactive maps to analyze crime data, highlighting crime-prone zones to improve public awareness and aid law enforcement.</p>
+                <div class="mt-auto flex space-x-4">
+                    <button onclick="openModal('crimeModal')" class="flex items-center px-4 py-2 bg-slate-700 hover:bg-sky-600 rounded-lg text-sm font-medium transition-all">View Code</button>
+                    <a href="https://github.com/shivansh1609" target="_blank" class="flex items-center px-4 py-2 bg-slate-700 hover:bg-sky-600 rounded-lg text-sm font-medium transition-all">Project Link</a>
+                </div>
+            </div>
+             <div class="card-hover bg-slate-800 p-6 rounded-xl border border-slate-700 flex flex-col">
+                <h3 class="text-xl font-semibold text-sky-300 mb-2">Library Management System</h3>
+                <p class="text-gray-400 mb-4 text-sm">C++, File Handling, OOP</p>
+                <p class="text-gray-300 mb-6 flex-grow">A comprehensive file-based system with role-based access and full catalog management, including book tracking and automated fine calculation.</p>
+                <div class="mt-auto flex space-x-4">
+                    <button onclick="openModal('libraryModal')" class="flex items-center px-4 py-2 bg-slate-700 hover:bg-sky-600 rounded-lg text-sm font-medium transition-all">View Code</button>
+                    <a href="https://github.com/shivansh1609" target="_blank" class="flex items-center px-4 py-2 bg-slate-700 hover:bg-sky-600 rounded-lg text-sm font-medium transition-all">Project Link</a>
+                </div>
+            </div>
+             <div class="card-hover bg-slate-800 p-6 rounded-xl border border-slate-700 flex flex-col">
+                <h3 class="text-xl font-semibold text-sky-300 mb-2">Netflix & Spotify Clone</h3>
+                <p class="text-gray-400 mb-4 text-sm">HTML, CSS, JS, ReactJS</p>
+                <p class="text-gray-300 mb-6 flex-grow">Pixel-perfect UI clones of popular streaming platforms demonstrating advanced frontend skills with responsive design and interactive elements.</p>
+                <div class="mt-auto flex space-x-4">
+                    <button onclick="openModal('cloneModal')" class="flex items-center px-4 py-2 bg-slate-700 hover:bg-sky-600 rounded-lg text-sm font-medium transition-all">View Code</button>
+                    <a href="https://github.com/shivansh1609" target="_blank" class="flex items-center px-4 py-2 bg-slate-700 hover:bg-sky-600 rounded-lg text-sm font-medium transition-all">Project Link</a>
+                </div>
+            </div>
+             <div class="card-hover bg-slate-800 p-6 rounded-xl border border-slate-700 flex flex-col">
+                <h3 class="text-xl font-semibold text-sky-300 mb-2">Sales Analytics Dashboard</h3>
+                <p class="text-gray-400 mb-4 text-sm">Excel, Power BI</p>
+                <p class="text-gray-300 mb-6 flex-grow">Dynamic dashboards for bike and coffee sales analysis, featuring comprehensive KPI tracking, interactive visuals, and automated reporting.</p>
+                 <div class="mt-auto flex space-x-4">
+                    <button onclick="openModal('dashboardModal')" class="flex items-center px-4 py-2 bg-slate-700 hover:bg-sky-600 rounded-lg text-sm font-medium transition-all">View Details</button>
+                    <a href="https://github.com/shivansh1609" target="_blank" class="flex items-center px-4 py-2 bg-slate-700 hover:bg-sky-600 rounded-lg text-sm font-medium transition-all">Project Link</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Achievements</h2>
+            <div class="w-24 h-1 bg-sky-500 mx-auto rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="card-hover bg-slate-800/50 p-8 rounded-2xl border border-slate-700">
+                <h3 class="text-xl font-semibold mb-4 text-sky-300">🏆 Coding & Problem Solving</h3>
+                <ul class="space-y-3 text-gray-300">
+                    <li class="flex"><span class="mr-2 text-sky-400">✓</span>Top 3% Coder at Coding Ninjas.</li>
+                    <li class="flex"><span class="mr-2 text-sky-400">✓</span>Solved 150+ problems on LeetCode.</li>
+                    <li class="flex"><span class="mr-2 text-sky-400">✓</span>500+ problems solved on CodeChef/Codeforces.</li>
+                </ul>
+            </div>
+            <div class="card-hover bg-slate-800/50 p-8 rounded-2xl border border-slate-700">
+                <h3 class="text-xl font-semibold mb-4 text-sky-300">🎉 Leadership & Events</h3>
+                <ul class="space-y-3 text-gray-300">
+                    <li class="flex"><span class="mr-2 text-sky-400">✓</span>Organized Fresher's Party for 500+ students.</li>
+                    <li class="flex"><span class="mr-2 text-sky-400">✓</span>Successfully conducted the CCC Cricket Tournament.</li>
+                    <li class="flex"><span class="mr-2 text-sky-400">✓</span>Active as an Event Organizer at IIIT Bhagalpur.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-800/30 rounded-3xl my-12 backdrop-blur-sm border border-slate-700/50">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Get In Touch</h2>
+            <p class="text-gray-400 max-w-xl mx-auto">I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team. Feel free to reach out!</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="space-y-6">
+                 <div class="flex items-center">
+                    <div class="bg-sky-500/10 p-3 rounded-lg mr-4"><svg class="h-6 w-6 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg></div>
+                    <div><h4 class="text-lg font-medium">Phone</h4><p class="text-gray-400">7007613596</p></div>
+                </div>
+                <div class="flex items-center">
+                    <div class="bg-sky-500/10 p-3 rounded-lg mr-4"><svg class="h-6 w-6 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
+                    <div><h4 class="text-lg font-medium">Email</h4><a href="mailto:arjunshiv16@gmail.com" class="text-gray-300 hover:text-sky-400 transition-colors">arjunshiv16@gmail.com</a></div>
+                </div>
+                <div class="flex items-center">
+                    <div class="bg-sky-500/10 p-3 rounded-lg mr-4"><svg class="h-6 w-6 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg></div>
+                    <div><h4 class="text-lg font-medium">GitHub</h4><a href="https://github.com/shivansh1609" target="_blank" class="text-gray-300 hover:text-sky-400 transition-colors">github.com/shivansh1609</a></div>
+                </div>
+                 <div class="flex items-center">
+                    <div class="bg-sky-500/10 p-3 rounded-lg mr-4"><svg class="h-6 w-6 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg></div>
+                    <div><h4 class="text-lg font-medium">LinkedIn</h4><a href="https://linkedin.com/in/shivanshu-pandey-17ba24308" target="_blank" class="text-gray-300 hover:text-sky-400 transition-colors">linkedin.com/in/shivanshu-pandey...</a></div>
+                </div>
+            </div>
+            <div>
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                        <input type="text" id="name" placeholder="Your Name" class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 text-white placeholder-gray-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                        <input type="email" id="email" placeholder="Your Email" class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 text-white placeholder-gray-500">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                        <textarea id="message" rows="4" placeholder="Your Message" class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 text-white placeholder-gray-500"></textarea>
+                    </div>
+                    <button type="submit" class="w-full px-6 py-3 bg-sky-600 hover:bg-sky-700 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg shadow-sky-900/50">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-700">
+        <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <p class="text-gray-400 mb-4 md:mb-0">© 2025 Shivanshu Pandey. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="https://github.com/shivansh1609" target="_blank" class="text-gray-400 hover:text-sky-400 transition-colors"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg></a>
+                <a href="https://linkedin.com/in/shivanshu-pandey-17ba24308" target="_blank" class="text-gray-400 hover:text-sky-400 transition-colors"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg></a>
+            </div>
+        </div>
+    </footer>
+    
+     <div id="crimeModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+        <div class="modal-content bg-slate-800 text-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] flex flex-col transform scale-95">
+            <div class="flex justify-between items-center p-4 border-b border-slate-700">
+                <h3 class="text-xl font-semibold text-sky-300">Crime Mapping and Analysis - Code</h3>
+                <button onclick="closeModal('crimeModal')" class="text-gray-400 hover:text-white">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto">
+                <pre><code class="language-python">
+# Crime Mapping and Analysis using Python and Folium
+# This script reads crime data from a CSV file, processes it, and generates an interactive map.
+
+import pandas as pd
+import folium
+from folium.plugins import HeatMap, MarkerCluster
+
+# 1. Load the dataset (replace 'crime_data.csv' with your file)
+# The CSV should have 'Latitude' and 'Longitude' columns.
+try:
+    df = pd.read_csv('crime_data.csv')
+    # 2. Data Cleaning: Drop rows with missing location data
+    df.dropna(subset=['Latitude', 'Longitude'], inplace=True)
+except FileNotFoundError:
+    print("Error: crime_data.csv not found. Creating dummy data for demonstration.")
+    data = {
+        'Latitude': [28.6139, 28.5355, 28.6562, 28.7041],
+        'Longitude': [77.2090, 77.2244, 77.2410, 77.1025],
+        'CrimeType': ['Theft', 'Assault', 'Burglary', 'Robbery'],
+        'Date': ['2023-01-15', '2023-02-20', '2023-03-10', '2023-04-05']
+    }
+    df = pd.DataFrame(data)
+
+# 3. Initialize the map
+# Centered on a sample location (e.g., Delhi, India)
+map_center = [df['Latitude'].mean(), df['Longitude'].mean()]
+crime_map = folium.Map(location=map_center, zoom_start=11, tiles="CartoDB dark_matter")
+
+# 4. Create Feature Groups
+heatmap_layer = folium.FeatureGroup(name='Crime Heatmap')
+marker_cluster_layer = folium.FeatureGroup(name='Individual Incidents')
+
+# 5. Add HeatMap layer
+# Create a list of points for the heatmap
+heat_data = [[row['Latitude'], row['Longitude']] for index, row in df.iterrows()]
+HeatMap(heat_data, radius=15).add_to(heatmap_layer)
+
+# 6. Add Marker Cluster layer for individual incidents
+marker_cluster = MarkerCluster().add_to(marker_cluster_layer)
+
+# Add markers for each crime incident
+for idx, row in df.iterrows():
+    popup_text = f"<b>Crime:</b> {row.get('CrimeType', 'N/A')}<br><b>Date:</b> {row.get('Date', 'N/A')}"
+    folium.Marker(
+        location=[row['Latitude'], row['Longitude']],
+        popup=popup_text,
+        icon=folium.Icon(color='red', icon='info-sign')
+    ).add_to(marker_cluster)
+
+# 7. Add layers to the map
+heatmap_layer.add_to(crime_map)
+marker_cluster_layer.add_to(crime_map)
+
+# 8. Add Layer Control to toggle between views
+folium.LayerControl().add_to(crime_map)
+
+# 9. Save the map to an HTML file
+output_filename = 'crime_map.html'
+crime_map.save(output_filename)
+
+print(f"Interactive crime map has been generated: {output_filename}")
+                </code></pre>
+            </div>
+        </div>
+    </div>
+    
+    <div id="libraryModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+        <div class="modal-content bg-slate-800 text-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] flex flex-col transform scale-95">
+            <div class="flex justify-between items-center p-4 border-b border-slate-700">
+                <h3 class="text-xl font-semibold text-sky-300">Library Management System - Code</h3>
+                <button onclick="closeModal('libraryModal')" class="text-gray-400 hover:text-white">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto">
+                <pre><code class="language-cpp">
+// Library Management System in C++
+// This is a simplified console-based application demonstrating OOP principles.
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+
+class Book {
+public:
+    std::string title;
+    std::string author;
+    int id;
+    bool isIssued;
+
+    Book(int id, std::string title, std::string author) 
+        : id(id), title(title), author(author), isIssued(false) {}
+
+    void display() const {
+        std::cout << "ID: " << id << "\tTitle: " << title << "\tAuthor: " << author 
+                  << "\tStatus: " << (isIssued ? "Issued" : "Available") << std::endl;
+    }
+};
+
+class Library {
+private:
+    std::vector<Book> books;
+    std::string filename = "library_data.txt";
+
+public:
+    Library() {
+        loadBooks();
+    }
+
+    ~Library() {
+        saveBooks();
+    }
+
+    void addBook() {
+        int id = books.empty() ? 1 : books.back().id + 1;
+        std::string title, author;
+        std::cout << "Enter book title: ";
+        std::getline(std::cin >> std::ws, title);
+        std::cout << "Enter book author: ";
+        std::getline(std::cin, author);
+        books.emplace_back(id, title, author);
+        std::cout << "Book added successfully!" << std::endl;
+    }
+
+    void displayAllBooks() const {
+        if (books.empty()) {
+            std::cout << "No books in the library." << std::endl;
+            return;
+        }
+        for (const auto& book : books) {
+            book.display();
+        }
+    }
+
+    void searchBook() const {
+        std::string query;
+        std::cout << "Enter title to search: ";
+        std::getline(std::cin >> std::ws, query);
+        bool found = false;
+        for (const auto& book : books) {
+            if (book.title.find(query) != std::string::npos) {
+                book.display();
+                found = true;
+            }
+        }
+        if (!found) {
+            std::cout << "No book found with that title." << std::endl;
+        }
+    }
+
+    void issueBook() {
+        int id;
+        std::cout << "Enter book ID to issue: ";
+        std::cin >> id;
+        for (auto& book : books) {
+            if (book.id == id) {
+                if (book.isIssued) {
+                    std::cout << "Book is already issued." << std::endl;
+                } else {
+                    book.isIssued = true;
+                    std::cout << "Book issued successfully." << std::endl;
+                }
+                return;
+            }
+        }
+        std::cout << "Book ID not found." << std::endl;
+    }
+
+    void saveBooks() const {
+        std::ofstream outFile(filename);
+        for (const auto& book : books) {
+            outFile << book.id << "," << book.title << "," << book.author << "," << book.isIssued << std::endl;
+        }
+        outFile.close();
+    }
+
+    void loadBooks() {
+        std::ifstream inFile(filename);
+        if (!inFile) return;
+        int id;
+        std::string title, author, line;
+        bool isIssued;
+        char comma;
+        while (std::getline(inFile, line)) {
+            std::stringstream ss(line);
+            ss >> id >> comma;
+            std::getline(ss, title, ',');
+            std::getline(ss, author, ',');
+            ss >> isIssued;
+            Book book(id, title, author);
+            book.isIssued = isIssued;
+            books.push_back(book);
+        }
+        inFile.close();
+    }
+};
+
+void showMenu() {
+    std::cout << "\n--- Library Management System ---\n";
+    std::cout << "1. Add New Book\n";
+    std::cout << "2. Display All Books\n";
+    std::cout << "3. Search for a Book\n";
+    std::cout << "4. Issue a Book\n";
+    std::cout << "5. Exit\n";
+    std::cout << "Enter your choice: ";
+}
+
+int main() {
+    Library lib;
+    int choice;
+    do {
+        showMenu();
+        std::cin >> choice;
+        switch (choice) {
+            case 1: lib.addBook(); break;
+            case 2: lib.displayAllBooks(); break;
+            case 3: lib.searchBook(); break;
+            case 4: lib.issueBook(); break;
+            case 5: std::cout << "Exiting program.\n"; break;
+            default: std::cout << "Invalid choice. Please try again.\n";
+        }
+    } while (choice != 5);
+    return 0;
+}
+                </code></pre>
+            </div>
+        </div>
+    </div>
+    
+    <div id="cloneModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+        <div class="modal-content bg-slate-800 text-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] flex flex-col transform scale-95">
+            <div class="flex justify-between items-center p-4 border-b border-slate-700">
+                <h3 class="text-xl font-semibold text-sky-300">Netflix/Spotify Clone - Code</h3>
+                <button onclick="closeModal('cloneModal')" class="text-gray-400 hover:text-white">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto">
+                <p class="text-lg font-semibold mb-2 text-sky-400">HTML Structure</p>
+                <pre><code class="language-html">
+&lt;!-- This is a simplified structure for a clone UI --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;UI Clone&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Header/Navbar --&gt;
+    &lt;header class="main-header"&gt;
+        &lt;div class="logo"&gt;STREAM&lt;/div&gt;
+        &lt;nav&gt;
+            &lt;a href="#"&gt;Home&lt;/a&gt;
+            &lt;a href="#"&gt;TV Shows&lt;/a&gt;
+            &lt;a href="#"&gt;Movies&lt;/a&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;!-- Hero Section --&gt;
+    &lt;section class="hero-section"&gt;
+        &lt;div class="hero-content"&gt;
+            &lt;h1&gt;Unlimited movies, TV shows, and more.&lt;/h1&gt;
+            &lt;p&gt;Watch anywhere. Cancel anytime.&lt;/p&gt;
+            &lt;button&gt;Get Started&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Content Grid --&gt;
+    &lt;section class="content-grid"&gt;
+        &lt;h2&gt;Trending Now&lt;/h2&gt;
+        &lt;div class="grid-container"&gt;
+            &lt;!-- Repeat this card for each item --&gt;
+            &lt;div class="content-card"&gt;
+                &lt;img src="placeholder.jpg" alt="Content Title"&gt;
+                &lt;h3&gt;Content Title&lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;!-- ... more cards --&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                <p class="text-lg font-semibold mt-6 mb-2 text-sky-400">CSS Styling</p>
+                <pre><code class="language-css">
+/* Basic styling for the clone UI */
+body {
+    background-color: #141414;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.hero-section {
+    height: 100vh;
+    background-image: linear-gradient(to top, rgba(0,0,0,0.8) 0, rgba(0,0,0,0) 60%, rgba(0,0,0,0.8) 100%), url('hero-bg.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.content-grid {
+    padding: 20px 50px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.content-card {
+    background-color: #282828;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.content-card:hover {
+    transform: scale(1.05);
+}
+
+.content-card img {
+    width: 100%;
+}
+
+.content-card h3 {
+    padding: 10px;
+}
+                </code></pre>
+            </div>
+        </div>
+    </div>
+    
+    <div id="dashboardModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+        <div class="modal-content bg-slate-800 text-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] flex flex-col transform scale-95">
+            <div class="flex justify-between items-center p-4 border-b border-slate-700">
+                <h3 class="text-xl font-semibold text-sky-300">Sales Analytics Dashboard - Details</h3>
+                <button onclick="closeModal('dashboardModal')" class="text-gray-400 hover:text-white">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto">
+                <p class="mb-4">
+                    This project was developed using <strong>Microsoft Excel</strong> and <strong>Power BI</strong>, which are visual analytics tools rather than traditional coding environments. The process involved data cleaning, transformation, and visualization.
+                </p>
+                <h4 class="text-lg font-semibold mb-2 text-sky-400">Process in Excel:</h4>
+                <ul class="list-disc list-inside space-y-2 mb-4">
+                    <li><strong>Data Cleaning:</strong> Removed duplicates, corrected data types, and handled missing values using Power Query.</li>
+                    <li><strong>Feature Engineering:</strong> Created new columns like 'Month', 'Year', and 'Profit Margin' using Excel formulas. Example: <code class="bg-slate-700 p-1 rounded">=B2-C2</code> for profit.</li>
+                    <li><strong>Pivot Tables:</strong> Created pivot tables to summarize data, such as total sales by region or product category.</li>
+                </ul>
+                <h4 class="text-lg font-semibold mb-2 text-sky-400">Process in Power BI:</h4>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><strong>Data Modeling:</strong> Imported cleaned data from Excel and established relationships between different tables (e.g., Sales and Products).</li>
+                    <li><strong>DAX Measures:</strong> Wrote DAX (Data Analysis Expressions) formulas to create dynamic calculations. Example: <code class="bg-slate-700 p-1 rounded">Total Sales = SUM(Sales[Revenue])</code>.</li>
+                    <li><strong>Visualization:</strong> Created interactive charts, graphs, and maps. Added slicers and filters to allow users to drill down into the data.</li>
+                    <li><strong>Dashboard Design:</strong> Assembled the visualizations into a cohesive and easy-to-understand dashboard layout.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Initialize ScrollReveal
+        const sr = ScrollReveal({
+            distance: '50px',
+            duration: 1500,
+            easing: 'ease-in-out',
+        });
+        sr.reveal('#home > div > div', { origin: 'bottom', interval: 200 });
+        sr.reveal('section > div:first-child', { origin: 'top' });
+        sr.reveal('.card-hover', { origin: 'bottom', interval: 100 });
+        sr.reveal('#about .grid > div', { origin: 'left', interval: 200 });
+        sr.reveal('#projects .grid > div', { origin: 'bottom', interval: 150 });
+        sr.reveal('#achievements .grid > div', { origin: 'bottom', interval: 150 });
+        sr.reveal('#contact .grid > div', { origin: 'right', interval: 200 });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Modal Logic
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('.modal-content').classList.remove('scale-95');
+            }, 10);
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('opacity-0');
+            modal.querySelector('.modal-content').classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 250);
+        }
+    </script>
+</body>
+</html>
