@@ -1,5 +1,5 @@
 # Personal-portfolio
-Of course! Here is a stylish README.md for your portfolio with a prominent heading and emojis.
+
 
 🚀 Shivanshu Pandey's Portfolio 🚀
 Welcome to the official repository for my personal portfolio website! This project is a showcase of my skills, projects, and journey as a developer and data science enthusiast. It's built with modern web technologies to be sleek, responsive, and engaging.
