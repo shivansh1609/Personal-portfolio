@@ -7,7 +7,6 @@ Welcome to the official repository for my personal portfolio website! This proje
 ✨ Live Demo
 You can view the live version of my portfolio here:
 
-➡️ https://your-link-here.com ⬅️
 
 💻 Tech Stack & Tools
 This portfolio was built using a combination of modern web development tools to ensure a fast, responsive, and visually appealing experience.
