@@ -96,6 +96,7 @@
                         <a href="#skills" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Skills</a>
                         <a href="#projects" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Projects</a>
                         <a href="#achievements" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Achievements</a>
+                        <a href="#resume" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Resume</a>
                         <a href="#contact" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Contact</a>
                     </div>
                 </div>
@@ -115,6 +116,7 @@
                 <a href="#skills" class="block nav-link text-gray-300 hover:text-white px-3 py-2">Skills</a>
                 <a href="#projects" class="block nav-link text-gray-300 hover:text-white px-3 py-2">Projects</a>
                 <a href="#achievements" class="block nav-link text-gray-300 hover:text-white px-3 py-2">Achievements</a>
+                <a href="#resume" class="block nav-link text-gray-300 hover:text-white px-3 py-2">Resume</a>
                 <a href="#contact" class="block nav-link text-gray-300 hover:text-white px-3 py-2">Contact</a>
             </div>
         </div>
@@ -288,6 +290,16 @@
                     <li class="flex"><span class="mr-2 text-sky-400">✓</span>Active as an Event Organizer at IIIT Bhagalpur.</li>
                 </ul>
             </div>
+        </div>
+    </section>
+
+    <section id="resume" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">My Resume</h2>
+            <p class="text-gray-400 max-w-xl mx-auto mb-8">Feel free to download my resume for a more detailed overview of my experience and qualifications.</p>
+            <a href="resume.pdf" download="Shivanshu_Pandey_Resume.pdf" class="inline-block px-8 py-4 bg-sky-600 hover:bg-sky-700 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg shadow-sky-900/50">
+                Download Resume
+            </a>
         </div>
     </section>
 
@@ -739,6 +751,7 @@ body {
         sr.reveal('#projects .grid > div', { origin: 'bottom', interval: 150 });
         sr.reveal('#achievements .grid > div', { origin: 'bottom', interval: 150 });
         sr.reveal('#contact .grid > div', { origin: 'right', interval: 200 });
+        sr.reveal('#resume', { origin: 'bottom' }); // Added for resume section
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
