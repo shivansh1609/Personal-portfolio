@@ -7,6 +7,10 @@ Welcome to the official repository for my personal portfolio website! This proje
 ✨ Live Demo
 You can view the live version of my portfolio here:
 
+Check out the live app [here](https://shiv-personal-portfolio.netlify.app/)
+
+[![Live Demo](https://img.shields.io/badge/Live-App-blue)](https://shiv-personal-portfolio.netlify.app/)
+
 
 💻 Tech Stack & Tools
 This portfolio was built using a combination of modern web development tools to ensure a fast, responsive, and visually appealing experience.
