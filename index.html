@@ -135,7 +135,7 @@
             </div>
             <div class="flex justify-center animate__animated animate__fadeInRight">
                 <div class="profile-pic-container w-64 h-64 md:w-80 md:h-80 shadow-2xl shadow-indigo-900/50">
-                    <img src="img.png" alt="Shivanshu Pandey" class="profile-pic w-full h-full object-cover rounded-full">
+                    <img src="img.png" alt="Shivanshu Pandey" class="profile-pic w-full h-full object-cover rounded-full" onerror="this.onerror=null;this.src='https://placehold.co/320x320/1e293b/e2e8f0?text=SP';">
                 </div>
             </div>
         </div>
@@ -238,16 +238,18 @@
                     <a href="https://github.com/shivansh1609" target="_blank" class="flex items-center px-4 py-2 bg-slate-700 hover:bg-sky-600 rounded-lg text-sm font-medium transition-all">Project Link</a>
                 </div>
             </div>
-             <div class="card-hover bg-slate-800 p-6 rounded-xl border border-slate-700 flex flex-col">
-                <h3 class="text-xl font-semibold text-sky-300 mb-2">Library Management System</h3>
-                <p class="text-gray-400 mb-4 text-sm">C++, File Handling, OOP</p>
-                <p class="text-gray-300 mb-6 flex-grow">A comprehensive file-based system with role-based access and full catalog management, including book tracking and automated fine calculation.</p>
+            
+            <div class="card-hover bg-slate-800 p-6 rounded-xl border border-slate-700 flex flex-col">
+                <h3 class="text-xl font-semibold text-sky-300 mb-2">Posture Detection</h3>
+                <p class="text-gray-400 mb-4 text-sm">JavaScript, ml5.js, p5.js</p>
+                <p class="text-gray-300 mb-6 flex-grow">A web-based project that uses a webcam and machine learning (PoseNet) to detect and provide real-time feedback on user posture.</p>
                 <div class="mt-auto flex space-x-4">
-                    <button onclick="openModal('libraryModal')" class="flex items-center px-4 py-2 bg-slate-700 hover:bg-sky-600 rounded-lg text-sm font-medium transition-all">View Code</button>
-                    <a href="https://github.com/shivansh1609" target="_blank" class="flex items-center px-4 py-2 bg-slate-700 hover:bg-sky-600 rounded-lg text-sm font-medium transition-all">Project Link</a>
+                    <button onclick="openModal('postureModal')" class="flex items-center px-4 py-2 bg-slate-700 hover:bg-sky-600 rounded-lg text-sm font-medium transition-all">View Code</button>
+                    <a href="https://github.com/shivansh1609/Posture-detection" target="_blank" class="flex items-center px-4 py-2 bg-slate-700 hover:bg-sky-600 rounded-lg text-sm font-medium transition-all">Project Link</a>
                 </div>
             </div>
-             <div class="card-hover bg-slate-800 p-6 rounded-xl border border-slate-700 flex flex-col">
+
+            <div class="card-hover bg-slate-800 p-6 rounded-xl border border-slate-700 flex flex-col">
                 <h3 class="text-xl font-semibold text-sky-300 mb-2">Netflix & Spotify Clone</h3>
                 <p class="text-gray-400 mb-4 text-sm">HTML, CSS, JS, ReactJS</p>
                 <p class="text-gray-300 mb-6 flex-grow">Pixel-perfect UI clones of popular streaming platforms demonstrating advanced frontend skills with responsive design and interactive elements.</p>
@@ -256,7 +258,8 @@
                     <a href="https://github.com/shivansh1609" target="_blank" class="flex items-center px-4 py-2 bg-slate-700 hover:bg-sky-600 rounded-lg text-sm font-medium transition-all">Project Link</a>
                 </div>
             </div>
-             <div class="card-hover bg-slate-800 p-6 rounded-xl border border-slate-700 flex flex-col">
+            
+            <div class="card-hover bg-slate-800 p-6 rounded-xl border border-slate-700 flex flex-col">
                 <h3 class="text-xl font-semibold text-sky-300 mb-2">Sales Analytics Dashboard</h3>
                 <p class="text-gray-400 mb-4 text-sm">Excel, Power BI</p>
                 <p class="text-gray-300 mb-6 flex-grow">Dynamic dashboards for bike and coffee sales analysis, featuring comprehensive KPI tracking, interactive visuals, and automated reporting.</p>
@@ -431,162 +434,91 @@ print(f"Interactive crime map has been generated: {output_filename}")
         </div>
     </div>
     
-    <div id="libraryModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+    <div id="postureModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
         <div class="modal-content bg-slate-800 text-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] flex flex-col transform scale-95">
             <div class="flex justify-between items-center p-4 border-b border-slate-700">
-                <h3 class="text-xl font-semibold text-sky-300">Library Management System - Code</h3>
-                <button onclick="closeModal('libraryModal')" class="text-gray-400 hover:text-white">&times;</button>
+                <h3 class="text-xl font-semibold text-sky-300">Posture Detection - Code</h3>
+                <button onclick="closeModal('postureModal')" class="text-gray-400 hover:text-white">&times;</button>
             </div>
             <div class="p-6 overflow-y-auto">
-                <pre><code class="language-cpp">
-// Library Management System in C++
-// This is a simplified console-based application demonstrating OOP principles.
+                <p class="mb-4">This project uses <strong>p5.js</strong> for drawing and webcam access, and <strong>ml5.js</strong> for the pre-trained PoseNet model. The following is a simplified example of the core logic in a `sketch.js` file.</p>
+                <pre><code class="language-javascript">
+// Posture Detection using p5.js and ml5.js
+// This script requires p5.js and ml5.js to be included in your HTML file.
 
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
+let video;
+let poseNet;
+let poses = [];
+let status = 'Good';
 
-class Book {
-public:
-    std::string title;
-    std::string author;
-    int id;
-    bool isIssued;
+function setup() {
+  createCanvas(640, 480);
+  video = createCapture(VIDEO);
+  video.size(width, height);
 
-    Book(int id, std::string title, std::string author) 
-        : id(id), title(title), author(author), isIssued(false) {}
+  // Create a new poseNet method with a single detection
+  poseNet = ml5.poseNet(video, modelReady);
+  
+  // This sets up an event that fills the global variable "poses"
+  // with an array every time a new pose is detected
+  poseNet.on('pose', function(results) {
+    poses = results;
+    checkPosture();
+  });
 
-    void display() const {
-        std::cout << "ID: " << id << "\tTitle: " << title << "\tAuthor: " << author 
-                  << "\tStatus: " << (isIssued ? "Issued" : "Available") << std::endl;
-    }
-};
-
-class Library {
-private:
-    std::vector<Book> books;
-    std::string filename = "library_data.txt";
-
-public:
-    Library() {
-        loadBooks();
-    }
-
-    ~Library() {
-        saveBooks();
-    }
-
-    void addBook() {
-        int id = books.empty() ? 1 : books.back().id + 1;
-        std::string title, author;
-        std::cout << "Enter book title: ";
-        std::getline(std::cin >> std::ws, title);
-        std::cout << "Enter book author: ";
-        std::getline(std::cin, author);
-        books.emplace_back(id, title, author);
-        std::cout << "Book added successfully!" << std::endl;
-    }
-
-    void displayAllBooks() const {
-        if (books.empty()) {
-            std::cout << "No books in the library." << std::endl;
-            return;
-        }
-        for (const auto& book : books) {
-            book.display();
-        }
-    }
-
-    void searchBook() const {
-        std::string query;
-        std::cout << "Enter title to search: ";
-        std::getline(std::cin >> std::ws, query);
-        bool found = false;
-        for (const auto& book : books) {
-            if (book.title.find(query) != std::string::npos) {
-                book.display();
-                found = true;
-            }
-        }
-        if (!found) {
-            std::cout << "No book found with that title." << std::endl;
-        }
-    }
-
-    void issueBook() {
-        int id;
-        std::cout << "Enter book ID to issue: ";
-        std::cin >> id;
-        for (auto& book : books) {
-            if (book.id == id) {
-                if (book.isIssued) {
-                    std::cout << "Book is already issued." << std::endl;
-                } else {
-                    book.isIssued = true;
-                    std::cout << "Book issued successfully." << std::endl;
-                }
-                return;
-            }
-        }
-        std::cout << "Book ID not found." << std::endl;
-    }
-
-    void saveBooks() const {
-        std::ofstream outFile(filename);
-        for (const auto& book : books) {
-            outFile << book.id << "," << book.title << "," << book.author << "," << book.isIssued << std::endl;
-        }
-        outFile.close();
-    }
-
-    void loadBooks() {
-        std::ifstream inFile(filename);
-        if (!inFile) return;
-        int id;
-        std::string title, author, line;
-        bool isIssued;
-        char comma;
-        while (std::getline(inFile, line)) {
-            std::stringstream ss(line);
-            ss >> id >> comma;
-            std::getline(ss, title, ',');
-            std::getline(ss, author, ',');
-            ss >> isIssued;
-            Book book(id, title, author);
-            book.isIssued = isIssued;
-            books.push_back(book);
-        }
-        inFile.close();
-    }
-};
-
-void showMenu() {
-    std::cout << "\n--- Library Management System ---\n";
-    std::cout << "1. Add New Book\n";
-    std::cout << "2. Display All Books\n";
-    std::cout << "3. Search for a Book\n";
-    std::cout << "4. Issue a Book\n";
-    std::cout << "5. Exit\n";
-    std::cout << "Enter your choice: ";
+  video.hide(); // Hide the video element, and just show the canvas
 }
 
-int main() {
-    Library lib;
-    int choice;
-    do {
-        showMenu();
-        std::cin >> choice;
-        switch (choice) {
-            case 1: lib.addBook(); break;
-            case 2: lib.displayAllBooks(); break;
-            case 3: lib.searchBook(); break;
-            case 4: lib.issueBook(); break;
-            case 5: std::cout << "Exiting program.\n"; break;
-            default: std::cout << "Invalid choice. Please try again.\n";
+function modelReady() {
+  console.log('Model Loaded!');
+}
+
+function draw() {
+  image(video, 0, 0, width, height);
+  
+  // We can call both functions to draw all keypoints and the skeletons
+  drawKeypoints();
+  
+  // Display posture status on the screen
+  fill(status === 'Good' ? '#22c55e' : '#ef4444');
+  textSize(32);
+  textAlign(CENTER, CENTER);
+  text(status + ' Posture', width / 2, 50);
+}
+
+// A function to draw ellipses over the detected keypoints
+function drawKeypoints() {
+  for (let i = 0; i < poses.length; i++) {
+    let pose = poses[i].pose;
+    for (let j = 0; j < pose.keypoints.length; j++) {
+      let keypoint = pose.keypoints[j];
+      if (keypoint.score > 0.2) {
+        fill(56, 189, 248);
+        noStroke();
+        ellipse(keypoint.position.x, keypoint.position.y, 10, 10);
+      }
+    }
+  }
+}
+
+// A simple function to check posture based on nose and shoulder position
+function checkPosture() {
+    if (poses.length > 0) {
+        const nose = poses[0].pose.keypoints[0]; // Nose is the first keypoint
+        const leftShoulder = poses[0].pose.keypoints[5];
+        const rightShoulder = poses[0].pose.keypoints[6];
+
+        if (nose.score > 0.5 && leftShoulder.score > 0.5 && rightShoulder.score > 0.5) {
+            const shoulderY = (leftShoulder.position.y + rightShoulder.position.y) / 2;
+            
+            // If the nose is significantly below the average shoulder height, it's bad posture
+            if (nose.position.y > shoulderY + 20) { 
+                status = 'Bad';
+            } else {
+                status = 'Good';
+            }
         }
-    } while (choice != 5);
-    return 0;
+    }
 }
                 </code></pre>
             </div>
@@ -774,6 +706,7 @@ body {
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
             modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
             setTimeout(() => {
                 modal.classList.remove('opacity-0');
                 modal.querySelector('.modal-content').classList.remove('scale-95');
@@ -786,8 +719,18 @@ body {
             modal.querySelector('.modal-content').classList.add('scale-95');
             setTimeout(() => {
                 modal.classList.add('hidden');
+                document.body.style.overflow = 'auto'; // Restore scrolling
             }, 250);
         }
+        
+        // Close modal on escape key press
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal:not(.hidden)').forEach(modal => {
+                    closeModal(modal.id);
+                });
+            }
+        });
     </script>
 </body>
 </html>
