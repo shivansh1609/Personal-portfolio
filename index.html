@@ -250,22 +250,22 @@
             </div>
 
             <div class="card-hover bg-slate-800 p-6 rounded-xl border border-slate-700 flex flex-col">
-                <h3 class="text-xl font-semibold text-sky-300 mb-2">Netflix & Spotify Clone</h3>
-                <p class="text-gray-400 mb-4 text-sm">HTML, CSS, JS, ReactJS</p>
-                <p class="text-gray-300 mb-6 flex-grow">Pixel-perfect UI clones of popular streaming platforms demonstrating advanced frontend skills with responsive design and interactive elements.</p>
+                <h3 class="text-xl font-semibold text-sky-300 mb-2">Gemini Clone</h3>
+                <p class="text-gray-400 mb-4 text-sm">ReactJS, Tailwind CSS, Gemini API</p>
+                <p class="text-gray-300 mb-6 flex-grow">A functional clone of the Gemini chatbot interface, leveraging the Gemini API for real-time AI-powered responses. Features a responsive design and animated UI elements.</p>
                 <div class="mt-auto flex space-x-4">
                     <button onclick="openModal('cloneModal')" class="flex items-center px-4 py-2 bg-slate-700 hover:bg-sky-600 rounded-lg text-sm font-medium transition-all">View Code</button>
-                    <a href="https://github.com/shivansh1609" target="_blank" class="flex items-center px-4 py-2 bg-slate-700 hover:bg-sky-600 rounded-lg text-sm font-medium transition-all">Project Link</a>
+                    <a href="https://github.com/shivansh1609/Google-Gemini-Clone" target="_blank" class="flex items-center px-4 py-2 bg-slate-700 hover:bg-sky-600 rounded-lg text-sm font-medium transition-all">Project Link</a>
                 </div>
             </div>
             
             <div class="card-hover bg-slate-800 p-6 rounded-xl border border-slate-700 flex flex-col">
-                <h3 class="text-xl font-semibold text-sky-300 mb-2">Sales Analytics Dashboard</h3>
-                <p class="text-gray-400 mb-4 text-sm">Excel, Power BI</p>
-                <p class="text-gray-300 mb-6 flex-grow">Dynamic dashboards for bike and coffee sales analysis, featuring comprehensive KPI tracking, interactive visuals, and automated reporting.</p>
+                <h3 class="text-xl font-semibold text-sky-300 mb-2">Weather API Dashboard</h3>
+                <p class="text-gray-400 mb-4 text-sm">Power BI, Power Query, DAX, REST API</p>
+                <p class="text-gray-300 mb-6 flex-grow">An interactive Power BI dashboard that connects to a live weather API to provide real-time weather forecasts, temperature trends, and humidity analysis for any city.</p>
                  <div class="mt-auto flex space-x-4">
-                    <button onclick="openModal('dashboardModal')" class="flex items-center px-4 py-2 bg-slate-700 hover:bg-sky-600 rounded-lg text-sm font-medium transition-all">View Details</button>
-                    <a href="https://github.com/shivansh1609" target="_blank" class="flex items-center px-4 py-2 bg-slate-700 hover:bg-sky-600 rounded-lg text-sm font-medium transition-all">Project Link</a>
+                    <button onclick="openModal('weatherModal')" class="flex items-center px-4 py-2 bg-slate-700 hover:bg-sky-600 rounded-lg text-sm font-medium transition-all">View Details</button>
+                    <a href="https://github.com/shivansh1609/Weather_dashboard" target="_blank" class="flex items-center px-4 py-2 bg-slate-700 hover:bg-sky-600 rounded-lg text-sm font-medium transition-all">Project Link</a>
                 </div>
             </div>
         </div>
@@ -313,6 +313,10 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div class="space-y-6">
+                 <div class="flex items-center">
+                    <div class="bg-sky-500/10 p-3 rounded-lg mr-4"><svg class="h-6 w-6 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg></div>
+                    <div><h4 class="text-lg font-medium">Phone</h4><p class="text-gray-400">7007613596</p></div>
+                </div>
                 <div class="flex items-center">
                     <div class="bg-sky-500/10 p-3 rounded-lg mr-4"><svg class="h-6 w-6 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
                     <div><h4 class="text-lg font-medium">Email</h4><a href="mailto:arjunshiv16@gmail.com" class="text-gray-300 hover:text-sky-400 transition-colors">arjunshiv16@gmail.com</a></div>
@@ -356,11 +360,11 @@
         </div>
     </footer>
     
-     <div id="crimeModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+    <div id="crimeModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50 opacity-0">
         <div class="modal-content bg-slate-800 text-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] flex flex-col transform scale-95">
             <div class="flex justify-between items-center p-4 border-b border-slate-700">
                 <h3 class="text-xl font-semibold text-sky-300">Crime Mapping and Analysis - Code</h3>
-                <button onclick="closeModal('crimeModal')" class="text-gray-400 hover:text-white">&times;</button>
+                <button onclick="closeModal('crimeModal')" class="text-gray-400 hover:text-white text-3xl font-bold">&times;</button>
             </div>
             <div class="p-6 overflow-y-auto">
                 <pre><code class="language-python">
@@ -375,73 +379,48 @@ from folium.plugins import HeatMap, MarkerCluster
 # The CSV should have 'Latitude' and 'Longitude' columns.
 try:
     df = pd.read_csv('crime_data.csv')
-    # 2. Data Cleaning: Drop rows with missing location data
     df.dropna(subset=['Latitude', 'Longitude'], inplace=True)
 except FileNotFoundError:
-    print("Error: crime_data.csv not found. Creating dummy data for demonstration.")
-    data = {
-        'Latitude': [28.6139, 28.5355, 28.6562, 28.7041],
-        'Longitude': [77.2090, 77.2244, 77.2410, 77.1025],
-        'CrimeType': ['Theft', 'Assault', 'Burglary', 'Robbery'],
-        'Date': ['2023-01-15', '2023-02-20', '2023-03-10', '2023-04-05']
-    }
+    print("Error: Creating dummy data for demonstration.")
+    data = {'Latitude': [28.61, 28.53, 28.65, 28.70], 'Longitude': [77.20, 77.22, 77.24, 77.10], 'CrimeType': ['Theft', 'Assault', 'Burglary', 'Robbery']}
     df = pd.DataFrame(data)
 
 # 3. Initialize the map
-# Centered on a sample location (e.g., Delhi, India)
 map_center = [df['Latitude'].mean(), df['Longitude'].mean()]
 crime_map = folium.Map(location=map_center, zoom_start=11, tiles="CartoDB dark_matter")
 
-# 4. Create Feature Groups
+# 4. Create Feature Groups and Layers
 heatmap_layer = folium.FeatureGroup(name='Crime Heatmap')
+HeatMap([[row['Latitude'], row['Longitude']] for index, row in df.iterrows()], radius=15).add_to(heatmap_layer)
+
 marker_cluster_layer = folium.FeatureGroup(name='Individual Incidents')
-
-# 5. Add HeatMap layer
-# Create a list of points for the heatmap
-heat_data = [[row['Latitude'], row['Longitude']] for index, row in df.iterrows()]
-HeatMap(heat_data, radius=15).add_to(heatmap_layer)
-
-# 6. Add Marker Cluster layer for individual incidents
 marker_cluster = MarkerCluster().add_to(marker_cluster_layer)
-
-# Add markers for each crime incident
 for idx, row in df.iterrows():
-    popup_text = f"<b>Crime:</b> {row.get('CrimeType', 'N/A')}<br><b>Date:</b> {row.get('Date', 'N/A')}"
-    folium.Marker(
-        location=[row['Latitude'], row['Longitude']],
-        popup=popup_text,
-        icon=folium.Icon(color='red', icon='info-sign')
-    ).add_to(marker_cluster)
+    popup_text = f"<b>Crime:</b> {row.get('CrimeType', 'N/A')}"
+    folium.Marker(location=[row['Latitude'], row['Longitude']], popup=popup_text).add_to(marker_cluster)
 
-# 7. Add layers to the map
+# 5. Add layers to map
 heatmap_layer.add_to(crime_map)
 marker_cluster_layer.add_to(crime_map)
-
-# 8. Add Layer Control to toggle between views
 folium.LayerControl().add_to(crime_map)
 
-# 9. Save the map to an HTML file
-output_filename = 'crime_map.html'
-crime_map.save(output_filename)
-
-print(f"Interactive crime map has been generated: {output_filename}")
+# 6. Save the map
+crime_map.save('crime_map.html')
                 </code></pre>
             </div>
         </div>
     </div>
     
-    <div id="postureModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+    <div id="postureModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50 opacity-0">
         <div class="modal-content bg-slate-800 text-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] flex flex-col transform scale-95">
             <div class="flex justify-between items-center p-4 border-b border-slate-700">
                 <h3 class="text-xl font-semibold text-sky-300">Posture Detection - Code</h3>
-                <button onclick="closeModal('postureModal')" class="text-gray-400 hover:text-white">&times;</button>
+                <button onclick="closeModal('postureModal')" class="text-gray-400 hover:text-white text-3xl font-bold">&times;</button>
             </div>
             <div class="p-6 overflow-y-auto">
                 <p class="mb-4">This project uses <strong>p5.js</strong> for drawing and webcam access, and <strong>ml5.js</strong> for the pre-trained PoseNet model. The following is a simplified example of the core logic in a `sketch.js` file.</p>
                 <pre><code class="language-javascript">
 // Posture Detection using p5.js and ml5.js
-// This script requires p5.js and ml5.js to be included in your HTML file.
-
 let video;
 let poseNet;
 let poses = [];
@@ -451,43 +430,26 @@ function setup() {
   createCanvas(640, 480);
   video = createCapture(VIDEO);
   video.size(width, height);
-
-  // Create a new poseNet method with a single detection
-  poseNet = ml5.poseNet(video, modelReady);
-  
-  // This sets up an event that fills the global variable "poses"
-  // with an array every time a new pose is detected
-  poseNet.on('pose', function(results) {
+  poseNet = ml5.poseNet(video, () => console.log('Model Loaded!'));
+  poseNet.on('pose', (results) => {
     poses = results;
     checkPosture();
   });
-
-  video.hide(); // Hide the video element, and just show the canvas
-}
-
-function modelReady() {
-  console.log('Model Loaded!');
+  video.hide();
 }
 
 function draw() {
   image(video, 0, 0, width, height);
-  
-  // We can call both functions to draw all keypoints and the skeletons
   drawKeypoints();
-  
-  // Display posture status on the screen
   fill(status === 'Good' ? '#22c55e' : '#ef4444');
   textSize(32);
   textAlign(CENTER, CENTER);
-  text(status + ' Posture', width / 2, 50);
+  text(`${status} Posture`, width / 2, 50);
 }
 
-// A function to draw ellipses over the detected keypoints
 function drawKeypoints() {
-  for (let i = 0; i < poses.length; i++) {
-    let pose = poses[i].pose;
-    for (let j = 0; j < pose.keypoints.length; j++) {
-      let keypoint = pose.keypoints[j];
+  for (let pose of poses) {
+    for (let keypoint of pose.pose.keypoints) {
       if (keypoint.score > 0.2) {
         fill(56, 189, 248);
         noStroke();
@@ -497,22 +459,12 @@ function drawKeypoints() {
   }
 }
 
-// A simple function to check posture based on nose and shoulder position
 function checkPosture() {
     if (poses.length > 0) {
-        const nose = poses[0].pose.keypoints[0]; // Nose is the first keypoint
-        const leftShoulder = poses[0].pose.keypoints[5];
-        const rightShoulder = poses[0].pose.keypoints[6];
-
+        const { nose, leftShoulder, rightShoulder } = poses[0].pose.keypoints.reduce((acc, kp) => ({...acc, [kp.part]: kp }), {});
         if (nose.score > 0.5 && leftShoulder.score > 0.5 && rightShoulder.score > 0.5) {
             const shoulderY = (leftShoulder.position.y + rightShoulder.position.y) / 2;
-            
-            // If the nose is significantly below the average shoulder height, it's bad posture
-            if (nose.position.y > shoulderY + 20) { 
-                status = 'Bad';
-            } else {
-                status = 'Good';
-            }
+            status = (nose.position.y > shoulderY + 20) ? 'Bad' : 'Good';
         }
     }
 }
@@ -521,144 +473,95 @@ function checkPosture() {
         </div>
     </div>
     
-    <div id="cloneModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+    <div id="cloneModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50 opacity-0">
         <div class="modal-content bg-slate-800 text-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] flex flex-col transform scale-95">
             <div class="flex justify-between items-center p-4 border-b border-slate-700">
-                <h3 class="text-xl font-semibold text-sky-300">Netflix/Spotify Clone - Code</h3>
-                <button onclick="closeModal('cloneModal')" class="text-gray-400 hover:text-white">&times;</button>
+                <h3 class="text-xl font-semibold text-sky-300">Gemini Clone - Code</h3>
+                <button onclick="closeModal('cloneModal')" class="text-gray-400 hover:text-white text-3xl font-bold">&times;</button>
             </div>
             <div class="p-6 overflow-y-auto">
-                <p class="text-lg font-semibold mb-2 text-sky-400">HTML Structure</p>
-                <pre><code class="language-html">
-&lt;!-- This is a simplified structure for a clone UI --&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;UI Clone&lt;/title&gt;
-    &lt;link rel="stylesheet" href="style.css"&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- Header/Navbar --&gt;
-    &lt;header class="main-header"&gt;
-        &lt;div class="logo"&gt;STREAM&lt;/div&gt;
-        &lt;nav&gt;
-            &lt;a href="#"&gt;Home&lt;/a&gt;
-            &lt;a href="#"&gt;TV Shows&lt;/a&gt;
-            &lt;a href="#"&gt;Movies&lt;/a&gt;
-        &lt;/nav&gt;
-    &lt;/header&gt;
+                <p class="mb-4">This project uses <strong>ReactJS</strong> for the frontend and interacts with the <strong>Gemini API</strong> for chat functionality. Below is a simplified example of the main chat component.</p>
+                <p class="text-lg font-semibold mt-6 mb-2 text-sky-400">ReactJS Component (`Chat.jsx`)</p>
+                <pre><code class="language-javascript">
+import React, { useState } from 'react';
+import { runChat } from './api/gemini'; // Assumed API call function
 
-    &lt;!-- Hero Section --&gt;
-    &lt;section class="hero-section"&gt;
-        &lt;div class="hero-content"&gt;
-            &lt;h1&gt;Unlimited movies, TV shows, and more.&lt;/h1&gt;
-            &lt;p&gt;Watch anywhere. Cancel anytime.&lt;/p&gt;
-            &lt;button&gt;Get Started&lt;/button&gt;
-        &lt;/div&gt;
-    &lt;/section&gt;
+function Chat() {
+  const [prompt, setPrompt] = useState('');
+  const [messages, setMessages] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-    &lt;!-- Content Grid --&gt;
-    &lt;section class="content-grid"&gt;
-        &lt;h2&gt;Trending Now&lt;/h2&gt;
-        &lt;div class="grid-container"&gt;
-            &lt;!-- Repeat this card for each item --&gt;
-            &lt;div class="content-card"&gt;
-                &lt;img src="placeholder.jpg" alt="Content Title"&gt;
-                &lt;h3&gt;Content Title&lt;/h3&gt;
-            &lt;/div&gt;
-            &lt;!-- ... more cards --&gt;
-        &lt;/div&gt;
-    &lt;/section&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-                </code></pre>
-                <p class="text-lg font-semibold mt-6 mb-2 text-sky-400">CSS Styling</p>
-                <pre><code class="language-css">
-/* Basic styling for the clone UI */
-body {
-    background-color: #141414;
-    color: white;
-    font-family: Arial, sans-serif;
-    margin: 0;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!prompt) return;
+
+    const userMessage = { from: 'user', text: prompt };
+    setMessages(prev => [...prev, userMessage]);
+    setLoading(true);
+    
+    try {
+        const aiResponse = await runChat(prompt);
+        const aiMessage = { from: 'ai', text: aiResponse };
+        setMessages(prev => [...prev, userMessage, aiMessage]);
+    } catch (error) {
+        console.error("API Error:", error);
+        const errorMessage = { from: 'ai', text: 'Sorry, something went wrong.' };
+        setMessages(prev => [...prev, userMessage, errorMessage]);
+    } finally {
+        setLoading(false);
+        setPrompt('');
+    }
+  };
+
+  return (
+    &lt;div className="chat-container"&gt;
+      &lt;div className="message-list"&gt;
+        {messages.map((msg, index) => (
+          &lt;div key={index} className={`message ${msg.from}`}&gt;
+            &lt;p&gt;{msg.text}&lt;/p&gt;
+          &lt;/div&gt;
+        ))}
+        {loading && &lt;div className="message ai"&gt;Thinking...&lt;/div&gt;}
+      &lt;/div&gt;
+      &lt;form onSubmit={handleSubmit} className="input-form"&gt;
+        &lt;input type="text" value={prompt} onChange={(e) => setPrompt(e.target.value)} placeholder="Enter a prompt here" /&gt;
+        &lt;button type="submit" disabled={loading}&gt;Send&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  );
 }
-
-.main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-}
-
-.hero-section {
-    height: 100vh;
-    background-image: linear-gradient(to top, rgba(0,0,0,0.8) 0, rgba(0,0,0,0) 60%, rgba(0,0,0,0.8) 100%), url('hero-bg.jpg');
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.content-grid {
-    padding: 20px 50px;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-.content-card {
-    background-color: #282828;
-    border-radius: 5px;
-    overflow: hidden;
-    transition: transform 0.2s;
-}
-
-.content-card:hover {
-    transform: scale(1.05);
-}
-
-.content-card img {
-    width: 100%;
-}
-
-.content-card h3 {
-    padding: 10px;
-}
+export default Chat;
                 </code></pre>
             </div>
         </div>
     </div>
     
-    <div id="dashboardModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+    <div id="weatherModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50 opacity-0">
         <div class="modal-content bg-slate-800 text-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] flex flex-col transform scale-95">
             <div class="flex justify-between items-center p-4 border-b border-slate-700">
-                <h3 class="text-xl font-semibold text-sky-300">Sales Analytics Dashboard - Details</h3>
-                <button onclick="closeModal('dashboardModal')" class="text-gray-400 hover:text-white">&times;</button>
+                <h3 class="text-xl font-semibold text-sky-300">Weather API Dashboard - Details</h3>
+                <button onclick="closeModal('weatherModal')" class="text-gray-400 hover:text-white text-3xl font-bold">&times;</button>
             </div>
             <div class="p-6 overflow-y-auto">
-                <p class="mb-4">
-                    This project was developed using <strong>Microsoft Excel</strong> and <strong>Power BI</strong>, which are visual analytics tools rather than traditional coding environments. The process involved data cleaning, transformation, and visualization.
-                </p>
-                <h4 class="text-lg font-semibold mb-2 text-sky-400">Process in Excel:</h4>
+                <p class="mb-4">This project was developed using <strong>Power BI</strong> to connect to a live weather REST API, transforming the JSON response into an interactive dashboard.</p>
+                <h4 class="text-lg font-semibold mb-2 text-sky-400">Process in Power Query:</h4>
                 <ul class="list-disc list-inside space-y-2 mb-4">
-                    <li><strong>Data Cleaning:</strong> Removed duplicates, corrected data types, and handled missing values using Power Query.</li>
-                    <li><strong>Feature Engineering:</strong> Created new columns like 'Month', 'Year', and 'Profit Margin' using Excel formulas. Example: <code class="bg-slate-700 p-1 rounded">=B2-C2</code> for profit.</li>
-                    <li><strong>Pivot Tables:</strong> Created pivot tables to summarize data, such as total sales by region or product category.</li>
+                    <li><strong>API Connection:</strong> Used the `Web.Contents` function in Power Query to connect to the weather API endpoint, passing a city name as a parameter.</li>
+                    <li><strong>JSON Parsing:</strong> The JSON response from the API was parsed within Power Query to extract relevant data points like temperature, humidity, wind speed, and forecast details.</li>
+                    <li><strong>Data Transformation:</strong> Cleaned and transformed the data by expanding records, converting data types (e.g., Unix timestamps to DateTime), and unpivoting columns to create a tidy dataset suitable for analysis.</li>
                 </ul>
-                <h4 class="text-lg font-semibold mb-2 text-sky-400">Process in Power BI:</h4>
+                <h4 class="text-lg font-semibold mb-2 text-sky-400">Process in Power BI (DAX & Visualization):</h4>
                 <ul class="list-disc list-inside space-y-2">
-                    <li><strong>Data Modeling:</strong> Imported cleaned data from Excel and established relationships between different tables (e.g., Sales and Products).</li>
-                    <li><strong>DAX Measures:</strong> Wrote DAX (Data Analysis Expressions) formulas to create dynamic calculations. Example: <code class="bg-slate-700 p-1 rounded">Total Sales = SUM(Sales[Revenue])</code>.</li>
-                    <li><strong>Visualization:</strong> Created interactive charts, graphs, and maps. Added slicers and filters to allow users to drill down into the data.</li>
-                    <li><strong>Dashboard Design:</strong> Assembled the visualizations into a cohesive and easy-to-understand dashboard layout.</li>
+                    <li><strong>Data Modeling:</strong> Established a simple data model to handle current weather and forecast data.</li>
+                    <li><strong>DAX Measures:</strong> Wrote DAX (Data Analysis Expressions) formulas to create key metrics. Example: <code class="bg-slate-700 p-1 rounded">Avg Temperature = AVERAGE('Weather'[Temperature])</code>.</li>
+                    <li><strong>Visualization:</strong> Built the dashboard using various visuals:
+                        <ul class="list-disc list-inside ml-6 mt-1">
+                            <li><strong>Cards</strong> to display current temperature and humidity.</li>
+                            <li><strong>Line charts</strong> to show temperature trends over a 5-day forecast.</li>
+                            <li><strong>Gauges</strong> to visualize wind speed.</li>
+                            <li><strong>Slicers</strong> to allow users to dynamically select a city to view weather for.</li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -679,55 +582,62 @@ body {
         sr.reveal('#projects .grid > div', { origin: 'bottom', interval: 150 });
         sr.reveal('#achievements .grid > div', { origin: 'bottom', interval: 150 });
         sr.reveal('#contact .grid > div', { origin: 'right', interval: 200 });
-        sr.reveal('#resume', { origin: 'bottom' }); // Added for resume section
+        sr.reveal('#resume', { origin: 'bottom' });
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const targetElement = document.querySelector(this.getAttribute('href'));
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
             });
         });
         
         // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelectorAll('#mobile-menu a');
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+        });
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
         });
 
         // Modal Logic
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
+            if (!modal) return;
             modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden';
             setTimeout(() => {
-                modal.classList.remove('opacity-0');
+                modal.classList.add('opacity-100');
                 modal.querySelector('.modal-content').classList.remove('scale-95');
             }, 10);
         }
 
         function closeModal(modalId) {
             const modal = document.getElementById(modalId);
-            modal.classList.add('opacity-0');
+            if (!modal) return;
+            modal.classList.remove('opacity-100');
             modal.querySelector('.modal-content').classList.add('scale-95');
             setTimeout(() => {
                 modal.classList.add('hidden');
-                document.body.style.overflow = 'auto'; // Restore scrolling
+                document.body.style.overflow = 'auto';
             }, 250);
         }
         
-        // Close modal on escape key press
         window.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
-                document.querySelectorAll('.modal:not(.hidden)').forEach(modal => {
-                    closeModal(modal.id);
-                });
+                document.querySelectorAll('.modal:not(.hidden)').forEach(modal => closeModal(modal.id));
             }
         });
     </script>
 </body>
 </html>
-
